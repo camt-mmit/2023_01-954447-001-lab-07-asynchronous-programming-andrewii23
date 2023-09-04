@@ -1,0 +1,14 @@
+<dl class="box-size" *ngIf="data else noData">
+
+  <ng-container *ngFor="let item of data; let inputIndex = index">
+    <div class="section-view-list">
+      <dt class="section-list-title">Input {{ inputIndex + 1 }} :</dt>
+      <dd>{{ item.toLocaleString() }}</dd>
+    </div>
+  </ng-container>
+
+</dl>
+
+<ng-template #noData>
+  <div class="empty">No data fetching here!!!</div>
+</ng-template>

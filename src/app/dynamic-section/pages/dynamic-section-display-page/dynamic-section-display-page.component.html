@@ -1,0 +1,8 @@
+<ng-container *ngIf="data$ | async as data">
+  <app-dynamic-section-display [data]="data === 'undefined' ? undefined : data">
+  </app-dynamic-section-display>
+
+  <router-outlet *ngIf = "data !== 'undefined'"></router-outlet>
+</ng-container>
+
+

@@ -3,14 +3,12 @@ import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-dynamic-section-page',
   standalone: true,
   imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive],
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  templateUrl: './dynamic-section-page.component.html',
+  styleUrls: ['./dynamic-section-page.component.scss']
 })
-export class AppComponent {
-  title = 'my-async';
-
+export class DynamicSectionPageComponent {
 
 }

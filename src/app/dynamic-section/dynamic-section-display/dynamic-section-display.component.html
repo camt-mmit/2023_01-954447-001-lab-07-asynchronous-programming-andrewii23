@@ -1,0 +1,17 @@
+<dl class="box-size" *ngIf="data else noData">
+
+  <ng-container *ngFor="let items of data; let sectionIndex = index">
+    <div class="section-view-list">
+      <dt class="section-view-list-title">
+        <a [routerLink]="[sectionIndex]">Section {{ sectionIndex + 1 }} :</a>
+      </dt>
+      <dd>{{ getResult(items).toLocaleString() }}</dd>
+    </div>
+
+  </ng-container>
+
+</dl>
+
+<ng-template #noData>
+  <div class="empty">No data fetching here!!!</div>
+</ng-template>

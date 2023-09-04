@@ -14,6 +14,7 @@
 }
 
 * {
+  border-radius: 0px;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -94,6 +95,11 @@ output {
   gap: 0.25rem;
 }
 
+.btn:hover {
+  color: #0f0f0f;
+  background-color: #fff;
+}
+
 .del {
   background-color: #e05242;
 }
@@ -115,6 +121,11 @@ header {
   padding: 2rem;
 }
 
+.input-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .nav-lists {
   display: flex;
   justify-content: center;
@@ -149,9 +160,14 @@ header {
 
 .friend-list {
   display: flex;
+  gap: .5rem;
 
   input {
     flex: 1 0 auto;
+  }
+  label {
+    display: flex;
+    align-items: center;
   }
 }
 
@@ -163,3 +179,44 @@ header {
 .main-title {
   margin: 0 auto;
 }
+
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #fff;
+  padding-bottom: .5rem;
+}
+
+.section {
+  margin-top: 1rem;
+  border: 2px solid #fff;
+}
+
+.input {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: .5rem;
+}
+
+.empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  font-size: 1.5rem;
+}
+
+.section-view-list {
+  display: flex;
+  gap: 1rem;
+  text-decoration: none;
+
+  dt a {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+

@@ -1,0 +1,32 @@
+<form [formGroup]="formGroup" class="box-size">
+  <ng-container formArrayName="data">
+    <button class="btn" type="button" (click)="addSection()"><i class='bx bx-folder-plus' ></i> Add Section</button>
+
+    <section *ngFor="let formArray of formGroup.controls.data.controls as sectionControls; let sectionIndex = index;"
+    [formArrayName]="sectionIndex">
+
+     <div class="section">
+       <div class="section-title">
+         <button class="btn" type="button" (click)="addInput(formArray)"><i class='bx bx-list-plus' ></i> Add Input</button>
+         <label>Section {{ sectionIndex + 1 }}</label>
+         <button class="btn" type="button" [disabled]="sectionControls.length === 1" (click)="removeSection(sectionIndex)"><i class='bx bx-folder-minus' ></i></button>
+       </div>
+       <div class="input">
+         <ng-container *ngFor="let formControl of formArray.controls as inputControls; let inputIndex = index">
+           <label class="input-label" for="input">Input : {{ inputIndex + 1}}</label>
+           <input type="number" id="input" [formControlName]="inputIndex"/>
+           <button class="btn" type="button" [disabled]="inputControls.length === 1" (click)="removeInput(formArray, inputIndex)"><i class='bx bx-x'></i></button>
+         </ng-container>
+       </div>
+       <output class="input">
+        <label>Result :</label>
+        <span>{{ getResult(formArray).toLocaleString() }}</span>
+      </output>
+
+     </div>
+     </section>
+  </ng-container>
+
+
+
+</form>
